@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de IMC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="container">
+        <h1>Calculadora de IMC</h1>
+
+        <div class="card">
+            <div class="input-group">
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" placeholder="Ex: 70" step="0.1" min="0" />
+            </div>
+
+            <div class="input-group">
+                <label for="altura">Altura (m)</label>
+                <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01" min="0" />
+            </div>
+
+            <button id="calcular">Calcular</button>
+
+            <div class="resultado">
+                <p id="valor-imc">IMC: —</p>
+                <p id="classificacao">Classificação: —</p>
+
+                <!-- Barra visual de IMC -->
+                <div class="barra-container">
+                    <div class="barra-imc">
+                        <div class="segmento abaixo" title="Abaixo do peso">Abaixo</div>
+                        <div class="segmento normal" title="Peso normal">Normal</div>
+                        <div class="segmento sobrepeso" title="Sobrepeso">Sobrepeso</div>
+                        <div class="segmento obesidade1" title="Obesidade grau I">Obesidade I</div>
+                        <div class="segmento obesidade2" title="Obesidade grau II">Obesidade II</div>
+                        <div class="segmento obesidade3" title="Obesidade grau III">Obesidade III</div>
+                        <div class="marcador" id="marcador">
+                            <div class="seta"></div>
+                            <div class="valor" id="marcador-text">—</div>
+                        </div>
+                    </div>
+                    <div class="legenda-pequena">
+                        <span>15</span>
+                        <span>45+</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="nota">
+                *Use valores positivos. Altura em metros (ex: 1.70). Peso em kg.
+            </p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
