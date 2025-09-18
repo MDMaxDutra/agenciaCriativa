@@ -1,0 +1,27 @@
+@use 'variaveis';
+
+// =============================
+// Mixins globais
+// =============================
+
+@mixin button-base(
+  $bg: variaveis.$white,
+  $color: variaveis.$black,
+  $border: 2px solid variaveis.$black
+) {
+  background-color: $bg;
+  color: $color;
+  border: $border;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  transition: variaveis.$transition;
+}
+
+@mixin spacing($margin: 0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+}

@@ -1,0 +1,14 @@
+// 1️⃣ Variáveis (sempre primeiro)
+@use 'variaveis' as *;
+
+// 2️⃣ Mixins (usa variáveis)
+@use 'mixins' as *;
+
+// 3️⃣ Base (reset, tipografia, body)
+@use 'base';
+
+// 4️⃣ Layout (header, footer, containers)
+@use 'layout';
+
+// 5️⃣ Componentes (botões, cards, menus, formulários, etc.)
+@use 'componentes';

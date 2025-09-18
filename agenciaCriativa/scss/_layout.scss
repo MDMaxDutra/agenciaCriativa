@@ -1,0 +1,304 @@
+@use 'variaveis';
+
+// =============================
+// Layout: header, home, about, services, testimonials, contact, footer
+// =============================
+
+// Header
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: variaveis.$white;
+  z-index: 1000;
+  padding: variaveis.$spacing-sm 0;
+  border-bottom: 1px solid variaveis.$gray-light;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: variaveis.$black;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: variaveis.$black;
+    margin-right: 8px;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+
+  &__item {
+    margin-left: variaveis.$spacing-md;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: variaveis.$black;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: variaveis.$transition;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: variaveis.$black;
+      transition: variaveis.$transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+// Home
+.home {
+  padding-top: clamp(1rem, 5vw, 3rem);
+  padding-bottom: clamp(1rem, 5vw, 3rem);
+  background-color: variaveis.$gray-light;
+  margin-top: 70px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+  }
+}
+
+.banner-content__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: variaveis.$spacing-md;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+.banner-content__text {
+  font-size: 1.2rem;
+  margin-bottom: variaveis.$spacing-lg;
+  max-width: 600px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+// Sobre Nós
+.about {
+  padding: calc(#{variaveis.$spacing-xl} / 10) 0;
+  background-color: variaveis.$white;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: variaveis.$spacing-lg;
+    align-items: center;
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    margin-bottom: variaveis.$spacing-md;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__text p {
+    margin-bottom: variaveis.$spacing-md;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  &__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+  }
+}
+
+// Serviços
+.services {
+  padding: variaveis.$spacing-xl 0;
+  background-color: variaveis.$gray-light;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: variaveis.$spacing-md;
+  }
+}
+
+// Depoimentos
+.testimonials {
+  padding: variaveis.$spacing-xl 0;
+  background-color: variaveis.$white;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: variaveis.$spacing-md;
+  }
+}
+
+.testimonial-card {
+  background-color: variaveis.$gray-light;
+  padding: variaveis.$spacing-lg;
+  border-left: 3px solid variaveis.$black;
+
+  &__text {
+    font-style: italic;
+    margin-bottom: variaveis.$spacing-md;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: variaveis.$spacing-sm;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+  }
+
+  &__details {
+    h4 {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      color: variaveis.$gray-medium;
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+}
+
+// Contato
+.contact {
+  padding: variaveis.$spacing-xl 0;
+  background-color: variaveis.$gray-light;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: variaveis.$spacing-lg;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: variaveis.$spacing-md;
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+    margin-right: variaveis.$spacing-sm;
+    color: variaveis.$black;
+  }
+
+  &__details {
+    h4 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+}
+
+// Footer
+.footer {
+  padding: variaveis.$spacing-lg 0;
+  background-color: variaveis.$black;
+  color: variaveis.$white;
+  text-align: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer-logo {
+  color: variaveis.$white;
+  margin-bottom: variaveis.$spacing-md;
+
+  span {
+    background-color: variaveis.$white;
+  }
+}
+
+.social-links {
+  display: flex;
+  margin-bottom: variaveis.$spacing-md;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: variaveis.$white;
+    color: variaveis.$black;
+    margin: 0 variaveis.$spacing-xs;
+    transition: variaveis.$transition;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+}

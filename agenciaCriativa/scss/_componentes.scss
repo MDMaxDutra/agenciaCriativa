@@ -1,0 +1,85 @@
+@use 'variaveis';
+@use 'mixins';
+
+// =============================
+// Componentes globais
+// =============================
+
+// Botões
+.btn {
+  @include mixins.button-base();
+}
+
+.btn--primary {
+  @include mixins.button-base(variaveis.$black, variaveis.$white, 2px solid variaveis.$black);
+
+  &:hover {
+    background-color: transparent;
+    color: variaveis.$black;
+  }
+}
+
+// Cards de serviço
+.service-card {
+  background-color: variaveis.$white;
+  padding: variaveis.$spacing-lg;
+  text-align: center;
+  border: 1px solid variaveis.$gray-light;
+  transition: variaveis.$transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    margin-bottom: variaveis.$spacing-md;
+    color: variaveis.$black;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin-bottom: variaveis.$spacing-sm;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+  }
+}
+
+// Formulários
+.form__group {
+  margin-bottom: variaveis.$spacing-md;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: variaveis.$spacing-xs;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.form__control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid variaveis.$gray-medium;
+  background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  transition: variaveis.$transition;
+
+  &:focus {
+    outline: none;
+    border-color: variaveis.$black;
+  }
+}
+
+.form__textarea {
+  min-height: 150px;
+  resize: vertical;
+}
